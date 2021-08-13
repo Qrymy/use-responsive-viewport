@@ -1,7 +1,11 @@
 {
   "name": "use-responsive-viewport",
-  "version": "0.0.2",
+  "version": "0.0.3",
+  "source": "index.ts",
   "main": "index.js",
+  "umd:main": "index.umd.js",
+  "module": "index.m.js",
+  "esmodule": "index.modern.js",
   "types": "index.d.ts",
   "repository": {
     "type": "git",
@@ -20,7 +24,7 @@
   ],
   "scripts": {
     "format": "prettier --loglevel warn --write \"**/*.{ts,tsx,css,md}\"",
-    "build": "tsc && esbuild index.ts --bundle --outfile=index.js --external:react --minify",
+    "build": "tsc && microbundle --external react --globals react=React --strict",
     "prepublishOnly": "yarn run build"
   },
   "devDependencies": {
@@ -34,6 +38,6 @@
     "react": "^16.8.0 || ^17"
   },
   "dependencies": {
-    "esbuild": "^0.12.20"
+    "microbundle": "^0.13.3"
   }
 }

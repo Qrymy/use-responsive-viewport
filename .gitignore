@@ -11,3 +11,12 @@ coverage/
 .eslintcache
 index.js
 index.d.ts
+index.esm.js
+index.esm.js.map
+index.js.map
+index.modern.js
+index.modern.js.map
+index.umd.js
+index.umd.js.map
+index.m.js
+index.m.js.map
