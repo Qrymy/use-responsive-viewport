@@ -9,7 +9,8 @@
     "noUnusedLocals": true,
     "pretty": true,
     "lib": [
-      "esnext"
+      "esnext",
+      "dom"
     ]
   }
 }
