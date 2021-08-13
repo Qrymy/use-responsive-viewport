@@ -7,3 +7,4 @@ Thumbs.db
 *.sublime-workspace
 *.log
 pnpm-lock.yaml
+coverage/
