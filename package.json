@@ -1,0 +1,8 @@
+{
+  "name": "use-responsive-viewport",
+  "version": "0.0.1",
+  "main": "index.js",
+  "repository": "git@github.com:Qrymy/use-responsive-viewport.git",
+  "author": "Qrymy <regist@qry.mx>",
+  "license": "MIT"
+}
