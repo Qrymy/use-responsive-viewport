@@ -72,6 +72,8 @@ export const useResponsiveViewport = (
   }, [minWidth])
 
   useEffect(() => {
+    handler()
+
     const decbouncedHandler = debounce(handler, delay)
 
     window.addEventListener("resize", decbouncedHandler)
