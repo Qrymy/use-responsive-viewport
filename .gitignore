@@ -9,3 +9,5 @@ Thumbs.db
 pnpm-lock.yaml
 coverage/
 .eslintcache
+index.js
+index.d.ts

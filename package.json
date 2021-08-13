@@ -6,7 +6,8 @@
   "author": "Qrymy <regist@qry.mx>",
   "license": "MIT",
   "scripts": {
-    "format": "prettier --loglevel warn --write \"**/*.{ts,tsx,css,md}\""
+    "format": "prettier --loglevel warn --write \"**/*.{ts,tsx,css,md}\"",
+    "build": "tsc && esbuild index.ts --bundle --outfile=index.js --external:react --minify"
   },
   "devDependencies": {
     "@types/react": "^17.0.17",
@@ -17,5 +18,8 @@
   "peerDependencies": {
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
+  },
+  "dependencies": {
+    "esbuild": "^0.12.20"
   }
 }

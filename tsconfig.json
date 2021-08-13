@@ -9,8 +9,10 @@
     "noUnusedLocals": true,
     "pretty": true,
     "lib": [
-      "esnext",
-      "dom"
-    ]
-  }
+      "dom",
+      "esnext"
+    ],
+    "declaration": true
+  },
+  "exclude": ["node_modules"]
 }
