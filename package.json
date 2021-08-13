@@ -1,6 +1,6 @@
 {
   "name": "use-responsive-viewport",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "index.js",
   "types": "index.d.ts",
   "repository": {
@@ -10,7 +10,14 @@
   "homepage": "https://github.com/qrymy/use-responsive-viewport",
   "author": "<me@qrymy.com>",
   "license": "MIT",
-  "keywords": ["react", "hooks", "typescript", "viewport", "responsive", "react-hooks"],
+  "keywords": [
+    "react",
+    "hooks",
+    "typescript",
+    "viewport",
+    "responsive",
+    "react-hooks"
+  ],
   "scripts": {
     "format": "prettier --loglevel warn --write \"**/*.{ts,tsx,css,md}\"",
     "build": "tsc && esbuild index.ts --bundle --outfile=index.js --external:react --minify",
