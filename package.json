@@ -4,5 +4,11 @@
   "main": "index.js",
   "repository": "git@github.com:Qrymy/use-responsive-viewport.git",
   "author": "Qrymy <regist@qry.mx>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "pretest": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^4.3.5"
+  }
 }
