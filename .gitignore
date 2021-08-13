@@ -8,3 +8,4 @@ Thumbs.db
 *.log
 pnpm-lock.yaml
 coverage/
+.eslintcache
