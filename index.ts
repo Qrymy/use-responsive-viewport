@@ -37,21 +37,21 @@ export const useResponsiveViewport = (
 
   const handler = useCallback(() => {
     const viewport = document.querySelector('meta[name="viewport"]')
-
-    const content =
-      window.outerWidth > minWidth ? "width=device-width" : `width=${minWidth}`
-
+    const isFullfilled = window.outerWidth > minWidth
+    const content = isFullfilled
+      ? ["width=device-width"]
+      : [`width=${minWidth}`, `initial-scale=${minWidth / window.outerWidth}`]
     const currentContent = viewport && viewport.getAttribute("content")
+    let target = content.join(",")
 
-    if (viewport && currentContent !== content) {
-      let target = content
-
+    if (viewport) {
       if (typeof currentContent === "string") {
         target = currentContent
           .split(",")
           .map((i) => i.trim())
           .filter((i) => !i.startsWith("width="))
-          .concat([content])
+          .filter((i) => !isFullfilled && !i.startsWith("initial-scale"))
+          .concat(content)
           .join(",")
       }
 
@@ -64,7 +64,7 @@ export const useResponsiveViewport = (
       if (head.length > 0) {
         const createdViewport = document.createElement("meta")
         createdViewport.setAttribute("name", "viewport")
-        createdViewport.setAttribute("content", content)
+        createdViewport.setAttribute("content", target)
 
         head[0].appendChild(createdViewport)
       }
