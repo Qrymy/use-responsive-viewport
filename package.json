@@ -1,6 +1,6 @@
 {
   "name": "use-responsive-viewport",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "source": "index.ts",
   "main": "index.js",
   "umd:main": "index.umd.js",
