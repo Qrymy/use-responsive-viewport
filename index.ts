@@ -37,10 +37,11 @@ export const useResponsiveViewport = (
 
   const handler = useCallback(() => {
     const viewport = document.querySelector('meta[name="viewport"]')
-    const isFullfilled = window.outerWidth > minWidth
+    const width = document.documentElement.clientWidth
+    const isFullfilled = width > minWidth
     const content = isFullfilled
       ? ["width=device-width"]
-      : [`width=${minWidth}`, `maximum-scale=${window.outerWidth / minWidth}`]
+      : [`width=${minWidth}`, `maximum-scale=${width / minWidth}`]
     const currentContent = viewport && viewport.getAttribute("content")
     let target = content.join(",")
 
@@ -77,9 +78,11 @@ export const useResponsiveViewport = (
     const decbouncedHandler = debounce(handler, delay)
 
     window.addEventListener("resize", decbouncedHandler)
+    window.addEventListener("orientationchange", decbouncedHandler)
 
     return () => {
       window.removeEventListener("resize", decbouncedHandler)
+      window.removeEventListener("orientationchange", decbouncedHandler)
     }
   }, [])
 }
