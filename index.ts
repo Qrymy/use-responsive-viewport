@@ -40,7 +40,7 @@ export const useResponsiveViewport = (
     const isFullfilled = window.outerWidth > minWidth
     const content = isFullfilled
       ? ["width=device-width"]
-      : [`width=${minWidth}`, `initial-scale=${minWidth / window.outerWidth}`]
+      : [`width=${minWidth}`, `initial-scale=${window.outerWidth / minWidth}`]
     const currentContent = viewport && viewport.getAttribute("content")
     let target = content.join(",")
 
